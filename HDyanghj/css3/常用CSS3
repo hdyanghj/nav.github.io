@@ -1,0 +1,47 @@
+:nth-of-type(1)相邻元素选择
+:before内容之前添加元素
+:after内容后添加元素
+放大效果
+	.brand_ul li a{
+ -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.brand_ul li a:hover{
+	-webkit-transform:translateY(0) scale(1.1);
+    -moz-transform:translateY(0) scale(1.1);
+    -o-transform:translateY(0) scale(1.1);
+	transform:translateY(0) scale(1.1);
+}
+投影
+  -moz-box-shadow:0px 0px 10px #f66711;
+  -webkit-box-shadow:0px 0px 10px #f66711;
+  box-shadow:0px 0px 10px #f66711;
+
+旋转
+span{
+	width: 128px;
+	height: 128px;
+	text-align: center;
+	line-height: 128px;
+	display: inline-block;
+	border:1px solid #a5a6a6;
+	-webkit-border-radius: 64px;
+	border-radius: 64px;
+	-webkit-transition: -webkit-transform 0.5s ease-out;
+	-moz-transition: -moz-transform 0.5s ease-out;
+	-o-transition: -o-transform 0.5s ease-out;
+	-ms-transition: -ms-transform 0.5s ease-out;
+}
+span:hover {
+	-moz-box-shadow:0px 0px 10px #a5a6a6;
+	-webkit-box-shadow:0px 0px 10px #a5a6a6;
+	box-shadow:0px 0px 10px #a5a6a6;
+	border: 1px solid #a5a6a6;
+	-webkit-transform: rotateZ(360deg);
+	-moz-transform: rotateZ(360deg);
+	-o-transform: rotateZ(360deg);
+	-ms-transform: rotateZ(360deg);
+	transform: rotateZ(360deg);
+}

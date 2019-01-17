@@ -1,0 +1,47 @@
+[
+{
+"testid":"201901021403052195",
+"membername":"木子",
+"memberage":16,
+"membersex":"男",
+"modelname":"国家体育锻炼（15-17岁男）",
+"adddate":"19-01-02",
+"assessstatus":"未完成"
+},
+{
+	"testid":"201812291740056710",
+	"membername":"木易",
+	"memberage":14,
+	"membersex":"男",
+	"modelname":"国家学生体质（初中男生）",
+	"adddate":"18-12-29",
+	"assessstatus":"已完成"
+},
+{
+	"testid":"201812281546567874",
+	"membername":"刘德华",
+	"memberage":18,
+	"membersex":"男",
+	"modelname":"国家学生体质（大学男生）",
+	"adddate":"18-12-28",
+	"assessstatus":"已完成"
+},
+{
+	"testid":"201812281542279078",
+	"membername":"天天",
+	"memberage":13,
+	"membersex":"男",
+	"modelname":"国家学生体质（初中男生）",
+	"adddate":"18-12-28",
+	"assessstatus":"已完成"
+},
+{
+	"testid":"201812281541297758",
+	"membername":"木易",
+	"memberage":16,
+	"membersex":"男",
+	"modelname":"国家体育锻炼（15-17岁男）",
+	"adddate":"18-12-28",
+	"assessstatus":"已完成"
+}
+]

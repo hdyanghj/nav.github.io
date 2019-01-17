@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>表单</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		.form_main{
+			width: 420px;
+			padding: 10px;
+			background: #FFF;
+			margin: 0 auto; 
+			border: 1px solid #CCC;
+		}
+		p{
+			padding: 5px 0;
+		}
+		.ipt_01{
+			width: 99%;
+			height: 28px;
+		}
+		.ipt_02{
+			width: 280px;
+			height: 28px;
+		}
+		#btn_01{
+			width: 120px;
+			height: 32px;
+			margin-left: 10px;
+			border-radius: 5px;
+			background: #a70256;
+			border: 0;
+		}
+		#btn_02{
+			width: 90px;
+			height: 32px;
+			border-radius: 5px;
+			background: #a70256;
+			border: 0;
+		}
+		#btn_03{
+			width: 90px;
+			height: 32px;
+			margin-left: 20px;
+			border-radius: 5px;
+			background: #FFF;
+			border: 1px solid #CCC;
+		}
+		.div_btn{
+			width: 100%;
+			padding: 20px 0;
+			text-align: center;
+		}
+		.delet_a{margin-left: 12px;}
+
+	</style>
+	<script type="text/javascript">
+	window.onload=function ()
+	{
+		var oBtn=document.getElementById('btn_01');
+		var oUl=document.getElementById('text_li');
+
+		var aA=document.getElementsByTagName('a');
+		
+		oBtn.onclick=function ()
+		{
+			var oLi=document.createElement('p');
+			var aLi=oUl.getElementsByTagName('p');
+			
+			oLi.innerHTML="<input class='ipt_02' type='text' name=''><a class='delet_a' href='javascript:;'>删除</a>";
+			
+			//父级.appendChild(子节点);
+			//oUl.appendChild(oLi);
+			if(aLi.length>0)
+			{
+				oUl.insertBefore(oLi, aLi[0]);
+			}
+			else
+			{
+				oUl.appendChild(oLi);
+			}
+			for(var i=0;i<aA.length;i++)
+			{
+				aA[i].onclick=function ()
+				{
+					oUl.removeChild(this.parentNode);
+				};
+			};
+		};
+	
+		
+	};
+	</script>
+	
+</head>
+<body>
+<div class="form_main">
+	<form>
+		<p>单选条件名称</p>
+		<input class="ipt_01" type="text" name="">
+		<p>单选选项</p>
+		<div id="text_li"></div>
+
+		<input class="ipt_02" type="text" name="">
+
+<input id="btn_01" type="button" value="+添加条目"/>
+<div class="div_btn"><input id="btn_02" type="button" value="确定"/><input id="btn_03" type="button" value="返回"/></div>
+		
+	</form>
+	
+</div>
+</body>
+</html>

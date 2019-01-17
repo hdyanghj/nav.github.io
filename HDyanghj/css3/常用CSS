@@ -1,0 +1,39 @@
+ 块元素 
+手型鼠标：
+cursor:pointer;
+清除浮动的几种方式：
+1、父级元素定义height。2、结尾处添加空白div标签定义clear:both;。3、父级div定义伪类:after和zoom。4、父级div定义overflow:hidden;。5、父级div定义overflow:auto;。6、父级div一起浮动。7、父级div定义display:table;。8、结尾处加br标签clear:both;
+圆角边框：
+border: 2px solid #393a39; border-radius:5px;   -moz-border-radius:5px; /* Old Firefox */
+虚线边框：
+border-bottom:1px dashed #384c85;
+清除按钮点击蓝色虚线边框：
+outline:none;
+div内img底部出现白块：
+要去掉空格可以使用vertical-align: bottom或将img标签变为块级元素。
+css把单行超出的部分显示为省略号的方法兼容火狐:
+li a {    display: block;    width: 80px;     overflow: hidden;/*注意不要写在最后了*/        white-space: nowrap;      -o-text-overflow: ellipsis;      text-overflow: ellipsis;    }    
+css把多行超出的部分显示为省略号的方法兼容火狐:
+li a {text-overflow: ellipsis; display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2;（行数）}
+背景透明
+background-color:#000000;/* IE6和部分IE7内核的浏览器(如QQ浏览器)下颜色被覆盖 */background-color:rgba(0,0,0,0.2);/* IE6和部分IE7内核的浏览器(如QQ浏览器)会读懂，但解析为透明 */
+
+图片改变颜色 
+-webkit-filter: grayscale(100%);   -moz-filter: grayscale(100%);  -ms-filter: grayscale(100%);  -o-filter: grayscale(100%);  filter: grayscale(100%);  filter: gray; 
+文字两端对齐：
+text-align:justify; text-align-last:justif
+ csshack 
+通配符：[class*="col-"]{ }  例：<div class="col-md-1"><div class="col-md-2">csshack：!important background:blue; /*Firefox 背景变蓝色*/background:red \9; /*IE8 背景变红色*/*background:black; /*IE7 背景变黑色*/_background:orange; /*IE6 背景变橘色*/
+
+ 字体 
+字体阴影+glow的滤镜：
+text-shadow:0 0 7px rgb(0, 0, 0);    filter:glow(color=black,strength=5); 
+a去除下划线：
+text-decoration:none; text-decoration:underline;
+去掉em标签斜体样式显示:
+font-style:normal; 
+字间距：
+letter-spacing：1px；
+
+字母大小写：
+首字母大写text-transform:capitalize;   全部大写text-transform:uppercase;   全部小写text-transform:lowercasecase;
