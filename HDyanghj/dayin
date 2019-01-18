@@ -7,3 +7,5 @@ console.log("1.精通HTML、JavaScript、Ajax、CSS等Web开发技术\n2.能熟�
 console.log("请将简历发送至 %c dongyingzi@jd.com（ 邮件标题请以“姓名-应聘XX职位-来自console”命名）","color:red")
 console.log("同学，祝贺你喜提彩蛋~\n或许你们还在犹豫是否加入，我会坦诚的告诉你我们超酷；\n在这里大家都用无人车代步，AI音箱不仅播放还可以交互；\n人工智能是发展的核心技术，做自己让未来不只领先几步；\n在这里做自己，欢迎来到码灵！\n")
 console.log("%c码灵前端导航：http://nav.imaring.com （前端攻城狮的福利）","color:red")
+console.log("%c恭喜！天赐锦鲤砸中了你","font-weight:bold")
+console.log("%c好嗨哟~感觉人生已达到了高潮","color:red")
