@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* My lover, you have worked hard these years,</span><br />
+				<!-- 我的爱人 这些年你辛苦了 -->
+				<span class="space"/><span class="comments">* I have been married for several years and have not been able to live the life you want.</span><br />
+				<!-- 结婚好几年了，没能让你过上你想要的生活。 -->
+				<span class="space"/><span class="comments">*/</span><br />
+				man i = <span class="keyword">new</span> man(<span class="string">"HongJu"</span>);<br />
+				woman u = <span class="keyword">new</span> woman(<span class="string">"JinMin"</span>);<br />
+				<span class="comments">// On November 12, 2013, we got married. </span><br />
+				<!-- 2014年06月30日，我们结婚了。 -->
+				u.love(u);<br />
+				<span class="comments">// On June 30, 2014, we had our first baby.</span><br />
+				<!-- 2014年06月30日，我们有了第一个宝宝。 -->
+				u.exhausting(1);<br />
+				<span class="comments">// On June 26, 2017, we had a second baby.</span><br />
+				<!-- 2017年06月26日，我们有了第二个宝宝. -->
+				u.exhausting(2);<br />
+				<span class="comments">// I want to stay with you to take care of you and our children.</span><br />
+				<!-- 我多想留在你身边照顾你和我们的孩子。 -->
+				i.takeCareOf(u);<br />
+				<span class="comments">// I have not earned money in these two years, I am very self-blaming.</span><br />
+				<!-- 这两年没挣到钱，我很自责 -->
+				<span class="comments">// So I dare not contact you, afraid that you will marry me.</span><br />
+				<!-- 所以我不敢跟你联系，怕你骂我。 -->
+				<span class="keyword">boolean</span> workHard = <span class="keyword">true</span>;<br />
+				<!-- 努力工作 -->
+				<span class="keyword">while</span> (workHard) {<br />
+				<span class="placeholder"/>u.waitFor(i);<br />
+				<span class="placeholder"/><span class="comments">// In 2019, I returned to work hard to earn money.</span><br />
+				<!-- 2019年我回努力的工作挣钱。 -->
+				<span class="placeholder"/><span class="comments">// Try to make you and our baby live a happy life.</span><br />
+				<!-- 争取让你和我们的宝宝过上幸福生活。 -->
+				<span class="placeholder"/>workHard = u.standBy();<br />
+				}<br />
+				<span class="comments">// After working hard to earn money, we will live happily ever after.</span><br />
+				<!-- 努力工作挣钱后，我们将从此过上幸福生活。 -->
+				i.love(u);<br />
+				i.liveHappilyWith(u);<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Jin Min, we have been married for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- HongJu</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Copyright © 2019 <a href='http://hackerzhou.me'>imaring.com</a> 2009-2011
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2013, 11, 12);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
