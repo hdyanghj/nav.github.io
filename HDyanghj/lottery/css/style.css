@@ -1,0 +1,257 @@
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑"
+}
+html,body,fieldset,img,iframe,abbr {
+	border: 0
+}
+li {
+	list-style: none
+}
+textarea {
+	overflow: auto;
+	resize: none
+}
+a,button {
+	cursor: pointer
+}
+h1,h2,h3,h4,h5,h6,em,strong,b {
+	font-weight: 700
+}
+a,a:hover {
+	text-decoration: none;
+	outline: 0;
+	-moz-outline: 0
+}
+body,textarea,input,button {
+	color: #62a1c9
+}
+html,body {
+	width: 100%;
+	height: 100%;
+	background:url('../images/bg.jpg') center center no-repeat;
+	background-size:cover;
+}
+.container{
+	margin: 0 auto;
+	text-align:center; 
+	overflow: hidden;
+}
+.title-img{
+	margin: 0 auto;
+}
+.title-img img{
+	width: 100%;
+}
+.result-box{
+	margin: 0 auto;
+	background-color:#ef6a70;
+	text-align:center;
+	color: #FFFFFF;
+	letter-spacing:5px;
+	box-shadow: 2px 2px 2px #FFFFFF inset; 
+}
+.button-main{
+	margin: 0 auto;
+}
+.button-main button{ 
+	border:none; 
+	background:none;
+
+}
+.button-main button:active{
+	-webkit-transform: translateX(0) translateY(2px);
+}
+.button-main button img{
+	width: 100%;
+	height: auto;
+}
+.button-main button:focus{outline:none;}
+.leaderboard{
+	background: url(../images/Leaderboard.png) top center no-repeat;
+	background-size: 100% auto;
+}
+.leader-title{
+	text-align: center;
+	color: #FFFFFF;
+}
+.type-title,.type-cont-1,.type-cont-2{
+	color: #FFFFFF
+}
+.hover{
+	background: rgba(168,8,12,1);
+}
+#popmian{
+	width: 300px;
+	height: 200px;
+	border: 5px solid #770c1d;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	text-align: center;
+	line-height: 200px;
+	font-size: 30px;
+	color: #FFFFFF;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	background: url(../images/popbg.png) top center no-repeat;
+	background-size: 100% auto; 
+	/*background: rgb(239, 176, 178,0.6);*/
+}
+.guanbi{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor:pointer;
+}
+.guanbi img{
+	width: 100%;
+	height: 100%;
+}
+.disnone{
+	display: none;
+}
+.disblock{
+	display: block;
+}
+@media (min-width: 1280px) {
+	.container{
+		width:1248px;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translateX(-50%) translateY(-50%);
+	}
+	.title-img{
+		width: 1048px;
+	}
+	.tab-list{
+		width: 769px;
+	    height: 80px;
+	    line-height: 80px;
+	    margin: 0 auto 40px;
+	    font-size: 24px;
+	    color: #FFFFFF;
+	    background: rgba(168,8,12,0.45);
+	    display: flex;
+	}
+	.tab-list div{
+		width: 50%;
+		cursor:pointer;
+	}
+	.result-box{
+		width: 769px;
+		height: 149px;
+		line-height: 149px;
+		border-radius: 75px;
+		font-size:54px;
+	}
+	.button-main{
+		width: 100%;
+		padding-top: 60px;
+	}
+	.button-main button{ 
+		width:414px;
+		height: 172px;   
+	}
+	.leaderboard{
+		width: 200px;
+		padding: 0 70px;
+		height: 410px;
+		position: absolute;
+		top: 0;
+		left: 80px
+	}
+	.leader-title{
+		padding: 10px 0;
+		font-size: 24px
+	}
+	.type-title{
+		width: 180px;
+		margin: 0 auto;
+		text-align: left;
+		font-size: 18px;
+	}
+	.type-cont-1,.type-cont-2{
+		text-align: center;
+		width: 160px;
+		line-height: 1.5;
+		margin: 0 auto
+	}
+	.type-cont-1{
+		height: 26px;
+	}
+
+}
+@media (max-width: 1280px) {
+	.container{
+		width:100%;
+	}
+	.title-img{
+		width: 100%;
+	}
+	.result-box{
+		width: 60%;
+		height: 149px;
+		line-height: 149px;
+		border-radius: 75px;
+		font-size:54px;
+	}
+	.button-main{
+		width: 100%;
+		padding-top: 50px;
+	}
+	.button-main button{ 
+		width:380px;   
+	}
+}
+@media (max-width: 880px) {
+	.result-box{
+		width: 60%;
+		height: 120px;
+		line-height: 120px;
+		border-radius: 60px;
+		font-size:44px;
+	}
+	.button-main{
+		width: 100%;
+		padding-top: 40px;
+	}
+	.button-main button{ 
+		width:320px;   
+	}
+}
+
+@media (max-width: 720px) {
+	.result-box{
+		width: 80%;
+		height: 100px;
+		line-height: 100px;
+		border-radius: 50px;
+		font-size:40px;
+	}
+	.button-main{
+		width: 100%;
+		padding-top: 40px;
+	}
+	.button-main button{ 
+		width:280px;   
+	}
+}
+@media (max-width: 480px) {
+	.result-box{
+		width: 80%;
+		height: 80px;
+		line-height: 80px;
+		border-radius: 40px;
+		font-size:26px;
+	}
+	.button-main{
+		width: 100%;
+	}
+	.button-main button{ 
+		width:80%;   
+	}
+}

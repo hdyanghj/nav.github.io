@@ -1,0 +1,178 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>全民体语 红包如雨</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="title-img">
+			<img src="images/title.png">
+		</div>
+		<div id="tablist" class="tab-list">
+			<div class="hover">幸运奖</div>
+			<div>特等奖</div>
+		</div>
+
+		<div class="result-box">
+			188****8888
+		</div><!--result-box-->
+		<div class="button-main">
+			<button class="start" onClick="start()">
+				<img src="images/start.png">
+			</button>
+			<button class="end" onClick="end()">
+				<img src="images/end.png">
+			</button>
+		</div>
+		<!-- <button class="start" onClick="start()">开始抽奖</button> -->
+	</div><!--container-->
+	<div class="leaderboard">
+		<div class="leader-title">获奖名单</div>
+		<div class="type-title">特等奖：</div>
+		<div class="type-cont-1" id="tedeng">未抽奖</div>
+		<div class="type-title">幸运奖：</div>
+		<div class="type-cont-2" id="xingyun">未抽奖</div>
+	</div>
+	<div id="popmian" class="disnone">
+		<div class="guanbi" id="guanbi"><img src="images/guanbi.png"></div>
+		<div class="poptext"></div>
+	</div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		let dataMsg = [];//缓存数据
+		let data=[];//参与人员
+		let tnumber;//幸运奖抽奖次数
+		let xnumber;//幸运奖抽奖次数
+		let drawList;//中奖列表
+		let tnumberList;//幸运奖抽奖列表
+		let xnumberList;//幸运奖抽奖列表
+		let lotteryType = 'X';//抽奖类型
+
+		//内定中奖人员
+		let key=0; //中奖下标
+		let time=0; //定时器
+		let startNum = false;
+		$(function(){ 
+			getInfo('D');
+			$("#guanbi").click(function() {
+				$("#popmian").slideUp(300);
+				$("#popmian").hide();
+			})
+			$("#tablist div").on("click",function(index,value) {//给a标签添加事件
+				var index=$(this).index();//获取当前a标签的个数
+				console.log(index,value)
+				if (index == 0) {
+					lotteryType = 'X'
+				}
+				if (index == 1) {
+					lotteryType = 'T'
+				}
+				$(this).addClass("hover").siblings().removeClass("hover");//a标签显示，同辈元素隐藏 
+			});
+		}); 
+		//从后台获取数据
+		function getInfo(e){
+			$.get("http://192.168.31.105:8080/app/activity/luckydraw/v1.0/mobile",{type:e,page:1,limit:300},function(result){
+				if (result.code == 0) {
+					if (startNum) {
+						dataMsg = result;
+						//开始转动数字
+						runTime();
+						console.log('真')
+					}else{
+						operating(result,e);
+					}
+				}
+				if (result.code == 2) {
+					$("#popmian .poptext").html(result.msg);
+					$("#popmian").slideDown(300);
+        			$("#popmian").show();
+				}
+				// 
+		        console.log(result)
+		        console.log(result.data)
+		        // console.log(result.data.list)
+		        // console.log(result.data.list.length)
+		    });
+		}
+		// 请求后调用
+		function operating(result,e){
+			console.log(result)
+			data = result.data.waitDraw;
+			tnumber = result.data.tnumber;
+			xnumber = result.data.xnumber;
+			drawList = result.data.drawList;
+			// tnumberList
+			// xnumberList
+			if (tnumber != 0 || xnumber != 0) {
+				if (tnumber != 0) {
+					$("#tedeng").empty();
+				}
+				if (xnumber != 0) {
+					$("#xingyun").empty();
+				}
+				
+				$.each(drawList, function(index, value){
+					console.log(value)
+					if (value.level.indexOf('特等奖') != -1) {
+						console.log('tedeng'+index)
+						if (e == 'T') {
+							let wntel=value.mobile.toString().substr(0, 3)+'****'+value.mobile.toString().substr(7);
+							$(".result-box").text(wntel);
+						}
+						let tedengtel=value.mobile.toString().substr(0, 3)+'****'+value.mobile.toString().substr(7);
+						$("#tedeng").html(tedengtel);
+					}
+					if (value.level.indexOf('幸运奖') != -1) {
+
+						if (e == 'X') {
+							let wntel=value.mobile.toString().substr(0, 3)+'****'+value.mobile.toString().substr(7);
+							$(".result-box").text(wntel);
+						}
+						let xingyuntel=value.mobile.toString().substr(0, 3)+'****'+value.mobile.toString().substr(7);
+						$("#xingyun").append(xingyuntel + '<br>');
+					}
+				});
+			}
+		}
+
+		function runTime(){
+			//$("button").show();
+			clearInterval(time);
+			time=setInterval('trunNum()',10);
+		}
+		
+		//点击按钮开始抽奖
+		function start(){
+			startNum = true;
+			if (xnumber >= 10 && tnumber >= 1) {
+				$("#popmian .poptext").html('本轮抽奖已结束');
+				$("#popmian").slideDown(300);
+    			$("#popmian").show();
+    			return;
+			}
+			getInfo(lotteryType)
+		}
+		//点击按钮结束抽奖
+		function end(){
+			endTrun();
+		}
+		function trunNum(){
+			key=Math.floor(Math.random()*(data.length-1));
+			var tel=data[key].toString().substr(0, 3)+'****'+data[key].toString().substr(7);
+			$(".result-box").text(tel);
+		}
+
+		//停止转动数字
+		function endTrun(){
+			operating(dataMsg,lotteryType);
+			clearInterval(time);
+		}
+	</script>
+</body>
+</html>
+
