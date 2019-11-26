@@ -929,7 +929,8 @@ body {
 }
 
 .sidebar-menu .logo-env .logo {
-    float: left
+    float: left;
+	width: 200px;
 }
 
 .sidebar-menu .logo-env .logo .logo-collapsed {
