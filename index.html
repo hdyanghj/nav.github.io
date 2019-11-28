@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="viggo" />
     <title>码灵导航 - 程序员网址导航</title>
-    <meta name="keywords" content="程序员导航,程序猿导航,Android导航,IOS导航,Android网址导航,IOS程序员导航,IT导航,Android程序员导航,IOS程序员导航,Html5网址导航,前端导航,前端程序猿导航,码农导航,面试,设计导航网站。www.imaring.com">
+    <meta name="keywords" content="程序员导航,工程师导航,程序员之家,Android导航,IOS导航,Android网址导航,IOS程序员导航,IT导航,Android程序员导航,IOS程序员导航,Html5网址导航,前端导航,前端工程师导航,码农导航,面试技巧,程序猿导航网站,工程师。www.imaring.com">
     <meta name="description" content="imaring - 作为一名码农，随着平时工作的需要，慢慢收集了国内外很多优秀网站，这其中包括在线工具、在线运行、免费接口、在线资源、在线学习、技术论坛、技术博客等等，满足一般程序员日常需求。www.imaring.com">
     <link rel="shortcut icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" href="assets/css/fonts/iconfont/iconfont.css">
@@ -1460,18 +1460,30 @@
                         <a href="../cn/about.html"><strong>imaring.com</strong></a>
                         <!--  - Purchase for only <strong>23$</strong> -->
                     </div>
-                    <!-- Go to Top Link, just add rel="go-top" to any link to add this functionality -->
-                    <div class="go-up">
-                        <a rel="go-top">
-                            <i class="fa-angle-up"></i>
-                        </a>
-                    </div>
                 </div>
             </footer>
+			<!-- Go to Top Link, just add rel="go-top" to any link to add this functionality -->
+			<div class="go-up" id="go_top">
+				<a rel="go-top">
+					<i class="fa-angle-up"></i>
+				</a>
+			</div>
         </div>
     </div>
     <!-- 锚点平滑移动 -->
     <script type="text/javascript">
+	$(function () {
+		$("#go_top").hide();
+	})
+
+	//scroll() 方法为滚动事件  
+	$(window).scroll(function(){
+		if ($(window).scrollTop()>100){
+			$("#go_top").fadeIn(800);
+		}else{
+			$("#go_top").fadeOut(800);
+		}
+	});
     $(document).ready(function() {
 		// 获取一言数据
 		fetch('https://v1.hitokoto.cn').then(function (res) {

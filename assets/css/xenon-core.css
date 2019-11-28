@@ -669,7 +669,6 @@ table.display-all td {
 .sidebar-menu .main-menu a,
 .navbar.horizontal-menu .navbar-inner .navbar-brand a[data-toggle=settings-pane],
 .navbar.horizontal-menu .navbar-inner .navbar-brand a[data-toggle=settings-pane] i,
-footer.main-footer .go-up a,
 .user-info-navbar .user-info-menu>li>a,
 .footer-sticked-chat .chat-conversations>li .chat-user,
 .footer-sticked-chat .chat-conversations>li.open .conversation-window,
@@ -2225,19 +2224,25 @@ footer.main-footer .footer-text {
     float: left
 }
 
-footer.main-footer .go-up {
-    float: right;
-    margin-bottom: 20px
+.go-up {
+    position: fixed;
+    bottom: 20px;
+	right:20px;
 }
 
-footer.main-footer .go-up a {
-    display: inline-block;
-    background-color: rgba(44, 46, 47, .05);
-    padding: 2px 5px
+.go-up a {
+    display: block;
+    width: 40px;
+    height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 30px;
+	color: #FFFFFF;
+    background: rgba(0,0,0,0.3);
 }
 
-footer.main-footer .go-up a:hover {
-    background-color: rgba(44, 46, 47, .1)
+.go-up a:hover {
+    background: rgba(0,0,0,0.2);
 }
 
 footer.main-footer.footer-type-2 {
@@ -2248,14 +2253,6 @@ footer.main-footer.footer-type-2 {
 
 footer.main-footer.footer-type-2 a {
     color: #fff
-}
-
-footer.main-footer.footer-type-2 .go-up a {
-    background-color: rgba(255, 255, 255, .05)
-}
-
-footer.main-footer.footer-type-2 .go-up a:hover {
-    background-color: rgba(255, 255, 255, .1)
 }
 
 footer.main-footer.fixed {
