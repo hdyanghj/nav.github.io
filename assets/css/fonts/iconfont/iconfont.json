@@ -116,6 +116,13 @@
       "font_class": "xuexi-icon",
       "unicode": "e60d",
       "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "12003626",
+      "name": "Business Icons_Blank Bubble Chat",
+      "font_class": "BusinessIcons_BlankBubbleChat",
+      "unicode": "ea88",
+      "unicode_decimal": 60040
     }
   ]
 }
