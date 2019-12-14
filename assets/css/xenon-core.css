@@ -918,8 +918,12 @@ body {
     display: table-cell;
     position: relative;
     width: 280px;
-    background: #2c2e2f;
+    background: #282a36;
     z-index: 1
+}
+
+.color-red{
+	color: #ff79c6;
 }
 
 .sidebar-menu .logo-env {
@@ -967,6 +971,9 @@ body {
         margin-top: 10px;
         margin-bottom: 10px
     }
+	.iframe-main{
+		display: none;
+	}
 }
 
 .sidebar-menu .main-menu a {
